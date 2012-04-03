@@ -1,0 +1,17 @@
+color molokai
+
+map <D-t> :CtrlP<CR>
+map <Leader><D-t> :CtrlPClearCache<CR>:CtrlP<CR>
+imap <D-t> <Esc>:CtrlP<CR>
+
+set guifont=Inconsolata-g:h14
+
+macmenu &File.Close key=<nop>
+map <D-w> :BD<cr>
+
+set guioptions-=L
+set guioptions-=r
+
+set winheight=20
+set winwidth=115
+
