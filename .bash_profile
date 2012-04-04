@@ -3,8 +3,8 @@ if [ -f /usr/local/etc/autojump ]; then
   . /usr/local/etc/autojump
 fi
 
-if [ -f  `brew --prefix git`/etc/bash_completion.d/git-completion.bash ]; then
-  . `brew --prefix git`/etc/bash_completion.d/git-completion.bash
+if [ -f `brew --prefix`/etc/bash_completion ]; then
+    . `brew --prefix`/etc/bash_completion
 fi
 
 if [ -f `brew --prefix git-flow`/etc/bash_completion.d/git-flow-completion.bash  ]; then
