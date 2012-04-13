@@ -11,6 +11,10 @@ if [ -f `brew --prefix git-flow`/etc/bash_completion.d/git-flow-completion.bash 
   . `brew --prefix git-flow`/etc/bash_completion.d/git-flow-completion.bash
 fi
 
+if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
+  . /usr/local/bin/virtualenvwrapper.sh
+fi
+
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
 
 # colors
@@ -52,9 +56,6 @@ alias ..='cd ..'
 
 alias du='du -kh'
 alias df='df -kTh'
-
-alias start_pow="launchctl load $HOME/Library/LaunchAgents/cx.pow.powd.plist"
-alias stop_pow="launchctl unload $HOME/Library/LaunchAgents/cx.pow.powd.plist"
 
 alias vim='mvim -v'
 
