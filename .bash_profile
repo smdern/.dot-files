@@ -138,4 +138,6 @@ alias glx="git log --graph --decorate --all --oneline"
 alias glxx='git log --graph --all --decorate'
 alias glx='git log --graph --all --decorate --pretty=format:"%C(magenta)%h %C(blue)%ai %C(green)%an %C(cyan)%s %C(yellow bold)%d"'
 
+alias hglog='hg sglog | less -R'
+
 export EDITOR=vim
