@@ -1,0 +1,38 @@
+[ui]
+username = Shaun Dern <smdern@gmail.com>
+verbose=true
+style = compact
+
+[extensions]
+color =
+graphlog =
+progress =
+gestalt=~/KilnExtensions/gestalt.py
+kilnauth=~/KilnExtensions/kilnauth.py
+kilnpath=~/KilnExtensions/kilnpath.py
+big-push=~/KilnExtensions/big-push.py
+kiln=~/KilnExtensions/kiln.py
+caseguard=~/KilnExtensions/caseguard.py
+kbfiles=~/KilnExtensions/bfiles/kbfiles
+hgext.purge=
+rebase =
+
+[color]
+status.modified = magenta bold
+status.added = green bold
+status.removed = red bold
+status.deleted = cyan bold
+status.unknown = blue bold
+status.ignored = black bold
+
+[auth]
+# kiln.prefix=
+# kiln.username=
+
+[web]
+cacerts = /etc/hg-dummy-cert.pem
+
+[alias]
+show = log --color=always -pr
+slog = log --template '\033[0;33m{rev} \033[0;31m{branches} \033[0;39m{desc|firstline|strip} \033[0;34m({date|age} by {author|person}) \033[1;39m{tags}\033[0m\n\n'
+sglog = glog --template '\t\033[0;33m{rev} \033[0;31m{branches}  \033[0m{desc|firstline|strip} \033[0;34m({date|age} by {author|person}) \033[1;39m{tags}\033[0m\n\n'
