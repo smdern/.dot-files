@@ -1,19 +1,20 @@
+if [[ `uname` == Darwin ]]; then
+  if [ -f `brew --prefix autojump`/etc/autojump ]; then
+      source `brew --prefix autojump`/etc/autojump
+  fi
 
-if [ -f /usr/local/etc/autojump ]; then
-  . /usr/local/etc/autojump
+  if [ -f `brew --prefix`/etc/bash_completion ]; then
+      source `brew --prefix`/etc/bash_completion
+  fi
+
+  if [ -f `brew --prefix git-flow`/etc/bash_completion.d/git-flow-completion.bash  ]; then
+      source `brew --prefix git-flow`/etc/bash_completion.d/git-flow-completion.bash
+  fi
 fi
 
-if [ -f `brew --prefix`/etc/bash_completion ]; then
-    . `brew --prefix`/etc/bash_completion
-fi
-
-if [ -f `brew --prefix git-flow`/etc/bash_completion.d/git-flow-completion.bash  ]; then
-  . `brew --prefix git-flow`/etc/bash_completion.d/git-flow-completion.bash
-fi
-
-if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
-  . /usr/local/bin/virtualenvwrapper.sh
-fi
+#if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
+#    source /usr/local/bin/virtualenvwrapper.sh
+#fi
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
 
