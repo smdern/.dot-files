@@ -36,3 +36,10 @@ cacerts = /etc/hg-dummy-cert.pem
 show = log --color=always -pr
 slog = log --template '\033[0;33m{rev} \033[0;31m{branches} \033[0;39m{desc|firstline|strip} \033[0;34m({date|age} by {author|person}) \033[1;39m{tags}\033[0m\n\n'
 sglog = glog --template '\t\033[0;33m{rev} \033[0;31m{branches}  \033[0m{desc|firstline|strip} \033[0;34m({date|age} by {author|person}) \033[1;39m{tags}\033[0m\n\n'
+
+[merge-tools]
+p4.priority = 100
+# p4.premerge = True  # change this to False if you're don't trust hg's internal merge
+p4.executable = /Applications/p4merge.app/Contents/MacOS/p4merge
+p4.gui = True
+p4.args = $base $local $other $output
