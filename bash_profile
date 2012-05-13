@@ -12,9 +12,9 @@ if [[ `uname` == Darwin ]]; then
   fi
 fi
 
-#if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
-#    source /usr/local/bin/virtualenvwrapper.sh
-#fi
+if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
+    source /usr/local/bin/virtualenvwrapper.sh
+fi
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
 
@@ -142,3 +142,4 @@ alias glx='git log --graph --all --decorate --pretty=format:"%C(magenta)%h %C(bl
 alias hglog='hg sglog | less -R'
 
 export EDITOR=vim
+export PATH=/usr/local/sbin:/usr/local/bin:/usr/local/share/python:$PATH
