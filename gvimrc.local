@@ -1,8 +1,8 @@
 color molokai
 
-map <D-t> :CtrlP<CR>
-map <Leader><D-t> :CtrlPClearCache<CR>:CtrlP<CR>
-imap <D-t> <Esc>:CtrlP<CR>
+" map <D-t> :CtrlP<CR>
+" map <Leader><D-t> :CtrlPClearCache<CR>:CtrlP<CR>
+" imap <D-t> <Esc>:CtrlP<CR>
 
 set guifont=Inconsolata-g:h12
 
