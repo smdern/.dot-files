@@ -4,7 +4,7 @@ color molokai
 " map <Leader><D-t> :CtrlPClearCache<CR>:CtrlP<CR>
 " imap <D-t> <Esc>:CtrlP<CR>
 
-set guifont=Inconsolata-g:h12
+" set guifont=Inconsolata-g:h12
 
 macmenu &File.Close key=<nop>
 map <D-w> :BD<cr>
