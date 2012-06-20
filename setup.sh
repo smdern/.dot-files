@@ -7,3 +7,4 @@ ln -s ~/.dot-files/gitconfig ~/.gitconfig
 ln -s ~/.dot-files/gvimrc.local ~/.gvimrc.local
 ln -s ~/.dot-files/hgrc ~/.hgrc
 ln -s ~/.dot-files/gemrc ~/.gemrc
+ln -s ~/.dot-files/tmux.conf ~/.tmux.conf
