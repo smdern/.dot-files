@@ -58,7 +58,7 @@
 [rerere]
   enabled = true
 [push]
-  default = tracking
+	default = tracking
 [core]
 	excludesfile = ~/.gitignore_global
 	editor = vim
