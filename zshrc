@@ -22,12 +22,13 @@ plugins=(git ssh-agent autojump bundler brew rvm vi-mode virtualenvwrapper)
 
 source $ZSH/oh-my-zsh.sh
 
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
+
 # Customize to your needs...
 export EDITOR=vim
 export PATH=/Users/shaun/.virtualenvs/hcd-connect/bin:/Users/shaun/.rvm/gems/ruby-1.9.2-p318@hcd-connect/bin:/Users/shaun/.rvm/gems/ruby-1.9.2-p318@global/bin:/Users/shaun/.rvm/rubies/ruby-1.9.2-p318/bin:/Users/shaun/.rvm/bin:/usr/local/sbin:/usr/local/bin:/usr/local/share/python:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
 
 #Aliases
-
 alias ls='ls -G'
 alias ll='ls -Al'
 alias mkdir='mkdir -p'
