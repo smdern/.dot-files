@@ -21,6 +21,7 @@ ZSH_THEME="re5et"
 plugins=(git ssh-agent autojump bundler brew rvm vi-mode virtualenvwrapper)
 
 source $ZSH/oh-my-zsh.sh
+# source /usr/local/share/python/virtualenvwrapper.sh
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
 
@@ -40,8 +41,8 @@ alias df='df -kTh'
 
 alias r='bundle exec rails'
 alias gs='bundle exec guard start'
-alias rk='b rake'
-alias mig='b rake db:migrate db:test:prepare'
+alias rk='bundle exec rake'
+alias mig='bundle exec rake db:migrate db:test:prepare'
 
 alias start_pow="launchctl load $HOME/Library/LaunchAgents/cx.pow.powd.plist"
 alias stop_pow="launchctl unload $HOME/Library/LaunchAgents/cx.pow.powd.plist"
