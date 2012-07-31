@@ -26,6 +26,7 @@ export EDITOR=vim
 export PATH=/Users/shaun/.virtualenvs/hcd-connect/bin:/Users/shaun/.rvm/gems/ruby-1.9.2-p318@hcd-connect/bin:/Users/shaun/.rvm/gems/ruby-1.9.2-p318@global/bin:/Users/shaun/.rvm/rubies/ruby-1.9.2-p318/bin:/Users/shaun/.rvm/bin:/usr/local/sbin:/usr/local/bin:/usr/local/share/python:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
 
 #Aliases
+alias tmux="tmux -2 attach"
 alias ls='ls -G'
 alias ll='ls -Al'
 alias mkdir='mkdir -p'
