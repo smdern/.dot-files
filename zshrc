@@ -3,20 +3,16 @@ ZSH=$HOME/.oh-my-zsh
 
 ZSH_THEME="re5et"
 
-# Set to this to use case-sensitive completion
-# CASE_SENSITIVE="true"
 
 # Comment this out to disable weekly auto-update checks
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment following line if you want to disable colors in ls
-# DISABLE_LS_COLORS="true"
-
-# Uncomment following line if you want to disable autosetting terminal title.
-# DISABLE_AUTO_TITLE="true"
+DISABLE_AUTO_UPDATE="true"
 
 # Uncomment following line if you want red dots to be displayed while waiting for completion
-# COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS="true"
+
+HISTSIZE=5000 # session history size
+SAVEHIST=1000 # saved history
+HISTFILE=~/.zshistory # history file
 
 plugins=(git ssh-agent autojump bundler brew rvm vi-mode virtualenvwrapper)
 

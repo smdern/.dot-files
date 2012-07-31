@@ -9,4 +9,5 @@ ln -s ~/.dot-files/vimrc.local ~/.gvimrc.local
 ln -s ~/.dot-files/hgrc ~/.hgrc
 ln -s ~/.dot-files/gemrc ~/.gemrc
 ln -s ~/.dot-files/tmux.conf ~/.tmux.conf
+ln -s ~/.dot-files/tmux-osx.conf ~/.tmux-osx.conf
 ln -s ~/.dot-files/zshrc ~/.zshrc
