@@ -25,10 +25,12 @@ source $ZSH/oh-my-zsh.sh
 export EDITOR=vim
 export PATH=/Users/shaun/.virtualenvs/hcd-connect/bin:/Users/shaun/.rvm/gems/ruby-1.9.2-p318@hcd-connect/bin:/Users/shaun/.rvm/gems/ruby-1.9.2-p318@global/bin:/Users/shaun/.rvm/rubies/ruby-1.9.2-p318/bin:/Users/shaun/.rvm/bin:/usr/local/sbin:/usr/local/bin:/usr/local/share/python:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
 
+#Bindkey
+bindkey '^r' history-incremental-search-backward
+
 #Aliases
 alias tmux="tmux -2 attach"
 alias ls='ls -G'
-alias ll='ls -Al'
 alias mkdir='mkdir -p'
 alias which='type -a'
 alias ..='cd ..'
@@ -55,10 +57,13 @@ alias grpo='git remote prune origin'
 alias gru="git remote show | sed '/heroku/d' | xargs -I {} git remote update {} --prune; git submodule update"
 alias gs="git status"
 alias gdc="git diff --cached"
-alias glx="git log --graph --decorate --all --oneline"
 
 alias glxx='git log --graph --all --decorate'
 alias glx='git log --graph --all --decorate --pretty=format:"%C(magenta)%h %C(blue)%ai %C(green)%an %C(cyan)%s %C(yellow bold)%d"'
+
+alias ll='ls -al'
+
+alias hglog='hg sglog | less -R'
 
 function __current_branch {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
@@ -84,16 +89,4 @@ function awklog {
   echo "awk ' /^$/ {flag=0} /Started.+$2/ {flag=1} flag { print }' $1"
   eval "awk ' /^$/ {flag=0} /Started.+$2/ {flag=1} flag { print }' $1"
 }
-
-alias ll='ls -al'
-
-alias gru="git remote show | sed '/heroku/d' | xargs -I {} git remote update {} --prune; git submodule update"
-alias gs="git status"
-alias gdc="git diff --cached"
-alias glx="git log --graph --decorate --all --oneline"
-
-alias glxx='git log --graph --all --decorate'
-alias glx='git log --graph --all --decorate --pretty=format:"%C(magenta)%h %C(blue)%ai %C(green)%an %C(cyan)%s %C(yellow bold)%d"'
-
-alias hglog='hg sglog | less -R'
 
