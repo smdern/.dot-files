@@ -29,7 +29,7 @@ export PATH=/Users/shaun/.virtualenvs/hcd-connect/bin:/Users/shaun/.rvm/gems/rub
 bindkey '^r' history-incremental-search-backward
 
 #Aliases
-alias tmux="tmux -2 attach"
+alias tmux2="tmux -2 attach"
 alias ls='ls -G'
 alias mkdir='mkdir -p'
 alias which='type -a'
