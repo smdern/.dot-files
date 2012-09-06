@@ -1,13 +1,31 @@
+#!/bin/sh
 
-echo 'Symlinking dotfiles'
+cd `dirname $0`
+F=`pwd |sed -e "s#$HOME/\?##"`
 
-ln -s ~/.dot-files/ackrc ~/.ackrc
-ln -s ~/.dot-files/bash_profile ~/.bash_profile
-ln -s ~/.dot-files/gitconfig ~/.gitconfig
-ln -s ~/.dot-files/vimrc.local ~/.vimrc.local
-ln -s ~/.dot-files/vimrc.local ~/.gvimrc.local
-ln -s ~/.dot-files/hgrc ~/.hgrc
-ln -s ~/.dot-files/gemrc ~/.gemrc
-ln -s ~/.dot-files/tmux.conf ~/.tmux.conf
-ln -s ~/.dot-files/tmux-osx.conf ~/.tmux-osx.conf
-ln -s ~/.dot-files/zshrc ~/.zshrc
+for P in *
+do
+  # skip setup
+  if [ "$P" = "setup.sh" ]; then continue; fi
+
+  # ensure permissions
+  chmod -R o-rwx,g-rwx $P
+
+  # skip existing links
+  if [ -h "$HOME/.$P" ]; then continue; fi
+
+  # move existing dir out of the way
+  if [ -e "$HOME/.$P" ]; then
+    if [ -e "$HOME/__$P" ]; then
+      echo "want to override $HOME/.$P but backup exists"
+      continue;
+    fi
+
+    echo -n "Backup "
+    mv -v "$HOME/.$P" "$HOME/__$P"
+  fi
+
+  # create link
+  echo -n "Link "
+  ln -v -s "$F/$P" "$HOME/.$P"
+done
