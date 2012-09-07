@@ -17,7 +17,8 @@ HISTFILE=~/.zshistory # history file
 plugins=(git ssh-agent autojump bundler brew rvm vi-mode virtualenvwrapper pow hub)
 
 source $ZSH/oh-my-zsh.sh
-# source /usr/local/share/python/virtualenvwrapper.sh
+
+unsetopt correct_all
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
 
