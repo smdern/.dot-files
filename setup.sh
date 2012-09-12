@@ -29,3 +29,4 @@ do
   echo -n "Link "
   ln -v -s "$F/$P" "$HOME/.$P"
 done
+
