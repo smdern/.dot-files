@@ -1,0 +1,22 @@
+[beets]
+directory: /media/Storage2/SortedMusic
+library: /home/shaun/musiclibrary.blb
+import_copy: yes
+import_delete: yes
+import_write: yes
+import_art: yes
+
+color: yes
+threaded: yes
+
+plugins = inline scrub chroma
+
+[paths]
+default: Artists/$albumartist/$album/$disc_and_track $title
+singleton: Singletons/$artist/$title
+comp: Compilations/$album/$track $title
+albumtype_soundtrack: Soundtracks/$album/$track $title
+
+[pathfields]
+disc_and_track: u'%02i %02i' % (disc, track) if disctotal > 1
+                else u'%02i' % (track)
