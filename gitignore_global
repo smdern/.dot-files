@@ -19,3 +19,4 @@ bundler_stubs
 .bundle
 .vimrc
 .rspec
+*.orig
