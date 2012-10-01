@@ -14,7 +14,7 @@ HISTSIZE=5000 # session history size
 SAVEHIST=1000 # saved history
 HISTFILE=~/.zshistory # history file
 
-plugins=(git ssh-agent autojump bundler brew rvm vi-mode virtualenvwrapper pow hub)
+plugins=(git ssh-agent autojump bundler brew rvm vi-mode pow hub)
 
 source $ZSH/oh-my-zsh.sh
 
