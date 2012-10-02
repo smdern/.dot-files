@@ -20,3 +20,4 @@ bundler_stubs
 .vimrc
 .rspec
 *.orig
+.powenv
