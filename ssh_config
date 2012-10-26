@@ -1,27 +1,18 @@
 Host *
   ForwardAgent yes
 
-Host tunnel_from_staging
+# run this if you are hosting session
+Host tunnel_from_remote
   HostName 69.64.77.74
   RemoteForward 12355 localhost:22
-  User shaun
 
-Host tunnel_to_shaun_via_staging
+# run these if you are joining session
+Host tunnel_to_pair_via_remote
   Hostname 69.64.77.74
-  LocalForward 12344 localhost:12355
-  User shaun
+  LocalForward 12355 localhost:12355
 
-Host shaun_via_staging
+Host pair_via_remote
   Hostname localhost
-  User alex
-  Port 12344
-
-Host tunnel_to_alex_via_staging
-  HostName 69.64.77.74
-  LocalForward 22344 localhost:22356
-
-Host alex_via_staging
+  Port 12355
   User pairprogramming
-  Hostname localhost
-  Port 22344
 
