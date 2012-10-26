@@ -1,0 +1,27 @@
+Host *
+  ForwardAgent yes
+
+Host tunnel_from_staging
+  HostName 69.64.77.74
+  RemoteForward 12355 localhost:22
+  User shaun
+
+Host tunnel_to_shaun_via_staging
+  Hostname 69.64.77.74
+  LocalForward 12344 localhost:12355
+  User shaun
+
+Host shaun_via_staging
+  Hostname localhost
+  User alex
+  Port 12344
+
+Host tunnel_to_alex_via_staging
+  HostName 69.64.77.74
+  LocalForward 22344 localhost:22356
+
+Host alex_via_staging
+  User pairprogramming
+  Hostname localhost
+  Port 22344
+

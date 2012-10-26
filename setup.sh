@@ -28,5 +28,8 @@ do
   # create link
   echo -n "Link "
   ln -v -s "$F/$P" "$HOME/.$P"
+
 done
+
+ln -v -s "$F/ssh_config" "$HOME/.ssh/config"
 
