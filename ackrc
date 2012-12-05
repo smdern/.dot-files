@@ -1,5 +1,5 @@
 --smart-case
---type-add=ruby=.haml,.feature
+--type-add=ruby=.haml,.feature,.hamlbars
 --type-add=css=.sass,.scss
 --type-set=tags=tags
 --type-set=coffee=coffee
