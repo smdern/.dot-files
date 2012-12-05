@@ -3,13 +3,13 @@ Host *
 
 # run this if you are hosting session
 Host tunnel_from_remote
-  HostName 69.64.77.74
+  HostName 69.64.85.55
   RemoteForward 12355 localhost:22
   RemoteForward 12356 localhost:3000
 
 # run these if you are joining session
 Host tunnel_to_pair_via_remote
-  Hostname 69.64.77.74
+  HostName 69.64.85.55
   LocalForward 12355 localhost:12355
   LocalForward 12356 localhost:3131
 
