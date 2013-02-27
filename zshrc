@@ -14,6 +14,9 @@ HISTSIZE=5000 # session history size
 SAVEHIST=1000 # saved history
 HISTFILE=~/.zshistory # history file
 
+ANDROID_HOME=/usr/local/Cellar/android-sdk/r21.0.1
+launchctl setenv ANDROID_HOME $ANDROID_HOME
+
 plugins=(git ssh-agent autojump bundler brew rvm vi-mode pow hub)
 
 source $ZSH/oh-my-zsh.sh
