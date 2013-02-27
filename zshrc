@@ -27,7 +27,7 @@ unsetopt correct_all
 
 # Customize to your needs...
 export EDITOR=vim
-export PATH=Users/shaun/.rvm/bin:/usr/local/sbin:/usr/local/bin:/usr/local/share/python:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
+export PATH=Users/shaun/.rvm/bin:/usr/local/sbin:/usr/local/bin:/usr/local/share/python:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/usr/local/share/npm/bin
 
 #Bindkey
 bindkey '^r' history-incremental-search-backward
@@ -49,8 +49,6 @@ alias mig='bundle exec rake db:migrate db:test:prepare'
 
 alias start_pow="launchctl load $HOME/Library/LaunchAgents/cx.pow.powd.plist"
 alias stop_pow="launchctl unload $HOME/Library/LaunchAgents/cx.pow.powd.plist"
-
-alias ll='ls -al'
 
 alias gf='git fetch'
 alias gm='git merge'
