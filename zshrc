@@ -27,9 +27,7 @@ unsetopt correct_all
 
 # Customize to your needs...
 export EDITOR=vim
-export PATH=$PATH:Users/shaun/.rvm/bin:/usr/local/sbin:/usr/local/bin
-export PATH=$PATH:/usr/local/share/python:/usr/bin:/bin:/usr/sbin
-export PATH=$PATH:/sbin:/usr/X11/bin:/usr/local/share/npm/bin
+export PATH=Users/shaun/.rvm/bin:/usr/local/sbin:/usr/local/bin:/usr/local/share/python:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
 
 #Bindkey
 bindkey '^r' history-incremental-search-backward
