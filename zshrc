@@ -3,7 +3,6 @@ ZSH=$HOME/.oh-my-zsh
 
 ZSH_THEME="re5et"
 
-
 # Comment this out to disable weekly auto-update checks
 DISABLE_AUTO_UPDATE="true"
 
@@ -14,9 +13,6 @@ HISTSIZE=5000 # session history size
 SAVEHIST=1000 # saved history
 HISTFILE=~/.zshistory # history file
 
-ANDROID_HOME=/usr/local/Cellar/android-sdk/r21.0.1
-launchctl setenv ANDROID_HOME $ANDROID_HOME
-
 plugins=(git ssh-agent autojump bundler brew rvm vi-mode pow hub)
 
 source $ZSH/oh-my-zsh.sh
@@ -25,8 +21,24 @@ unsetopt correct_all
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
 
+platform='unknown'
+unamestr=`uname`
+
+if [[ "$unamestr" == 'Darwin' ]]; then
+   platform='osx'
+elif [[ "$unamestr" == 'Linux' ]]; then
+   platform='linux'
+fi
+
+if [[ $platform == 'linux' ]]; then
+  source ~/.zshrc-linux
+elif [[ $platform == 'osx' ]]; then
+  source ~/.zshrc-osx
+fi
+
 # Customize to your needs...
 export EDITOR=vim
+
 export PATH=Users/shaun/.rvm/bin:/usr/local/sbin:/usr/local/bin:/usr/local/share/python:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/usr/local/share/npm/bin
 
 #Bindkey
@@ -36,7 +48,6 @@ bindkey '^r' history-incremental-search-backward
 alias tmux2="tmux -2 attach"
 alias ls='ls -G'
 alias mkdir='mkdir -p'
-alias which='type -a'
 alias ..='cd ..'
 
 alias du='du -kh'
@@ -46,9 +57,6 @@ alias r='bundle exec rails'
 alias gs='bundle exec guard start'
 alias rk='bundle exec rake'
 alias mig='bundle exec rake db:migrate db:test:prepare'
-
-alias start_pow="launchctl load $HOME/Library/LaunchAgents/cx.pow.powd.plist"
-alias stop_pow="launchctl unload $HOME/Library/LaunchAgents/cx.pow.powd.plist"
 
 alias gf='git fetch'
 alias gm='git merge'
