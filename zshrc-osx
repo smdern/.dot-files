@@ -2,6 +2,8 @@
 ANDROID_HOME=/usr/local/Cellar/android-sdk/r21.0.1
 launchctl setenv ANDROID_HOME $ANDROID_HOME
 
+ANDROID_KEYSTORE="/Users/shaun/.android/debug.keystore"
+
 alias vim="mvim -v"
 
 alias start_pow="launchctl load $HOME/Library/LaunchAgents/cx.pow.powd.plist"

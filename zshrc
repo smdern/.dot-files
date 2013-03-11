@@ -15,8 +15,10 @@ antigen-bundle <<EOBUNDLES
   rvm
   command-not-found
   heroku
-  zsh-users/zsh-syntax-highlighting
 EOBUNDLES
+
+# ZSH Syntax highlighting
+antigen-bundle zsh-users/zsh-syntax-highlighting
 
 # Load the theme.
 antigen-theme smdern/zsh-themes re5et.zsh-theme
@@ -117,3 +119,5 @@ function awklog {
   eval "awk ' /^$/ {flag=0} /Started.+$2/ {flag=1} flag { print }' $1"
 }
 
+# Source shell extensions for apportable
+source ~/Desktop/workspace/apportable/.shell_extension
