@@ -1,7 +1,28 @@
-# Path to your oh-my-zsh configuration.
-ZSH=$HOME/.oh-my-zsh
+source $HOME/.dot-files/antigen/antigen.zsh
 
-ZSH_THEME="re5et"
+# Load the oh-my-zsh's library
+antigen-lib
+
+# Bundles from the default repo (robbyrussell's oh-my-zsh).
+antigen-bundle <<EOBUNDLES
+  git
+  pow
+  bundler
+  brew
+  hub
+  autojump
+  vi-mode
+  rvm
+  command-not-found
+  heroku
+  zsh-users/zsh-syntax-highlighting
+EOBUNDLES
+
+# Load the theme.
+antigen-theme smdern/zsh-themes re5et.zsh-theme
+
+# Tell antigen that you're done
+antigen-apply
 
 # Comment this out to disable weekly auto-update checks
 DISABLE_AUTO_UPDATE="true"
@@ -12,10 +33,6 @@ COMPLETION_WAITING_DOTS="true"
 HISTSIZE=5000 # session history size
 SAVEHIST=1000 # saved history
 HISTFILE=~/.zshistory # history file
-
-plugins=(git ssh-agent autojump bundler brew rvm vi-mode pow hub)
-
-source $ZSH/oh-my-zsh.sh
 
 unsetopt correct_all
 
