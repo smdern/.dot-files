@@ -4,18 +4,15 @@ source $HOME/.dot-files/antigen/antigen.zsh
 antigen-lib
 
 # Bundles from the default repo (robbyrussell's oh-my-zsh).
-antigen-bundle <<EOBUNDLES
-  git
-  pow
-  bundler
-  brew
-  hub
-  autojump
-  vi-mode
-  rvm
-  command-not-found
-  heroku
-EOBUNDLES
+
+antigen-bundle autojump
+antigen-bundle git
+antigen-bundle pow
+antigen-bundle brew
+antigen-bundle vi-mode
+antigen-bundle command-not-found
+antigen-bundle rvm
+antigen-bundle heroku
 
 # ZSH Syntax highlighting
 antigen-bundle zsh-users/zsh-syntax-highlighting
