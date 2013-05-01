@@ -61,7 +61,7 @@ bindkey '^r' history-incremental-search-backward
 
 #Aliases
 alias tmux2="tmux -2 attach"
-alias ls='ls -G'
+alias ls='ls -G --color=auto'
 alias mkdir='mkdir -p'
 alias ..='cd ..'
 
