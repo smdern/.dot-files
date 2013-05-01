@@ -1,7 +1,6 @@
 source $HOME/.dot-files/antigen/antigen.zsh
 
-# Load the oh-my-zsh's library
-antigen-lib
+antigen-use oh-my-zsh
 
 # Bundles from the default repo (robbyrussell's oh-my-zsh).
 
@@ -116,5 +115,3 @@ function awklog {
   eval "awk ' /^$/ {flag=0} /Started.+$2/ {flag=1} flag { print }' $1"
 }
 
-# Source shell extensions for apportable
-source ~/Desktop/workspace/apportable/.shell_extension
