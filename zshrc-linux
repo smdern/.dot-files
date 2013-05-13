@@ -1,2 +1,3 @@
 alias vim="gvim -v"
+alias ack="ag"
 
