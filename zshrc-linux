@@ -1,3 +1,4 @@
 alias vim="gvim -v"
+alias ls='ls -G --color=auto'
 alias ack="ag"
 
