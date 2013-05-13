@@ -8,6 +8,7 @@
 --ignore-dir=.sass-cache
 --ignore-dir=log
 --ignore-dir=coverage
+--ignore-dir=node_modules
 --type-set=junk=.pyc,.css
 --type-set=zope=.zcml,.ini
 --type-set=coffeescript=.coffee
