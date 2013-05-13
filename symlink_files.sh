@@ -31,5 +31,3 @@ do
 
 done
 
-ln -v -s "$F/ssh_config" "$HOME/.ssh/config"
-
