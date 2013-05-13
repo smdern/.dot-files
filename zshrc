@@ -1,26 +1,26 @@
 source $HOME/.dot-files/antigen/antigen.zsh
 
-antigen-use oh-my-zsh
+antigen use oh-my-zsh
 
 # Bundles from the default repo (robbyrussell's oh-my-zsh).
 
-antigen-bundle autojump
-antigen-bundle git
-antigen-bundle pow
-antigen-bundle brew
-antigen-bundle vi-mode
-antigen-bundle command-not-found
-antigen-bundle rvm
-antigen-bundle heroku
+antigen bundle autojump
+antigen bundle git
+antigen bundle pow
+antigen bundle brew
+antigen bundle vi-mode
+antigen bundle command-not-found
+antigen bundle rvm
+antigen bundle heroku
 
 # ZSH Syntax highlighting
-antigen-bundle zsh-users/zsh-syntax-highlighting
+antigen bundle zsh-users/zsh-syntax-highlighting
 
 # Load the theme.
-antigen-theme smdern/zsh-themes re5et.zsh-theme
+antigen theme smdern/zsh-themes re5et.zsh-theme
 
 # Tell antigen that you're done
-antigen-apply
+antigen apply
 
 # Comment this out to disable weekly auto-update checks
 DISABLE_AUTO_UPDATE="true"
@@ -61,7 +61,6 @@ bindkey '^r' history-incremental-search-backward
 
 #Aliases
 alias tmux2="tmux -2 attach"
-alias ls='ls -G --color=auto'
 alias mkdir='mkdir -p'
 alias ..='cd ..'
 
