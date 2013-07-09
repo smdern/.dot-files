@@ -1,16 +1,9 @@
---smart-case
---type-add=ruby=.haml,.feature,.hamlbars
---type-add=css=.sass,.scss
---type-set=tags=tags
---type-set=coffee=coffee
---notags
---ignore-dir=tmp
---ignore-dir=.sass-cache
---ignore-dir=log
---ignore-dir=coverage
---ignore-dir=node_modules
---type-set=junk=.pyc,.css
---type-set=zope=.zcml,.ini
---type-set=coffeescript=.coffee
---nojunk
+/log/
+/logs/
+/images/
+/tmp/
+/vendor/
+*.tags*
+*.tmp*
+*.log
 
