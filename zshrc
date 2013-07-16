@@ -54,7 +54,7 @@ fi
 # Customize to your needs...
 export EDITOR=vim
 
-export PATH=Users/shaun/.rvm/bin:/usr/local/sbin:/usr/local/bin:/usr/local/share/python:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/usr/local/share/npm/bin
+export PATH=$PATH:$HOME/.rvm/bin:/usr/local/sbin:/usr/local/bin:/usr/local/share/python:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/usr/local/share/npm/bin
 
 #Bindkey
 bindkey '^r' history-incremental-search-backward
@@ -113,4 +113,5 @@ function awklog {
   echo "awk ' /^$/ {flag=0} /Started.+$2/ {flag=1} flag { print }' $1"
   eval "awk ' /^$/ {flag=0} /Started.+$2/ {flag=1} flag { print }' $1"
 }
+
 
