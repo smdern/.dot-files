@@ -54,7 +54,19 @@ fi
 # Customize to your needs...
 export EDITOR=vim
 
-export PATH=$PATH:$HOME/.rvm/bin:/usr/local/sbin:/usr/local/bin:/usr/local/share/python:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/usr/local/share/npm/bin
+path=(
+  $path
+  ~/.rvm/bin
+  /usr/local/sbin
+  /usr/local/bin
+  /usr/local/share/python
+  /usr/bin:/bin
+  /usr/sbin
+  /sbin
+  /usr/X11/bin
+  /usr/local/share/npm/bin
+  ~/.bin
+)
 
 #Bindkey
 bindkey '^r' history-incremental-search-backward
