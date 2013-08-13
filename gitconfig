@@ -43,13 +43,16 @@
   dh1 = diff HEAD~1
 
 [format]
-    pretty=format:%C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset
+  pretty=format:%C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset
 [merge]
   summary = false
-  keepBackup = false
   tool = p4merge
+  conflictstyle = diff3
+[mergetool]
+  keepBackup = false
+  keepTemporaries = false
+  prompt = false
 [mergetool "p4merge"]
-  cmd = /Applications/p4merge.app/Contents/Resources/launchp4merge "$PWD/$BASE" "$PWD/$REMOTE" "$PWD/$LOCAL" "$PWD/$MERGED"
   keepTemporaries = false
   keepBackup = false
 [diff]
@@ -63,12 +66,5 @@
 [core]
 	excludesfile = ~/.gitignore_global
 	editor = vim
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
-
 [branch]
   autosetupmerge=true
