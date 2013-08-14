@@ -1,25 +1,24 @@
 [user]
-	name = Shaun Dern
-	email = shaun@substantial.com
+  name = Shaun Dern
+  email = shaun@substantial.com
 
 [color]
   diff = auto
   status = auto
   branch = auto
   interactive = auto
-	ui = always
-
+  ui = always
 [alias]
   stat = status -s
   st = status -sb
   ci = commit
-  co = checkout
+  co = "!bash -c 'pause_guard' ; git checkout $* ; bash -c 'unpause_guard'"
   br = branch
   cp = cherry-pick
   m = merge --no-ff --no-commit
   f = fetch --prune
-  pre = pull --rebase
-  cleanbr = !git branch -r --no-color --merged | grep -v \"\\(master\\|develop\\|integration\\)\" | sed \"s/\\// :/\" | xargs -L1 git push && git branch --no-color --merged | grep -v \"\\(master\\|develop\\)\" | xargs -L1 git br -d
+  pre = !git fetch --prune --all && git rebase
+  cleanbr = !git branch -r --no-color --merged | grep -v \"/\\(master\\|develop\\|integration\\)$\" | grep -v `git rev-parse --abbrev-ref HEAD` | sed \"s/\\// :/\" | xargs -L1 git push && git branch --no-color --merged | grep -v \" \\(master\\|develop\\|integration\\)$\" | grep -v `git rev-parse --abbrev-ref HEAD` | xargs -L1 git branch -d
   di = diff
   dc = diff --cached
   amend = commit --amend
@@ -41,7 +40,6 @@
   b = branch
   ds = diff --stat=160,120
   dh1 = diff HEAD~1
-
 [format]
   pretty=format:%C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset
 [merge]
@@ -52,19 +50,23 @@
   keepBackup = false
   keepTemporaries = false
   prompt = false
+[mergetool "mvim3"]
+  keepBackup = false
+  keepTemporaries = false
+  cmd=/usr/local/bin/mvim -v -f -d -c \"wincmd J\" \"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
 [mergetool "p4merge"]
   keepTemporaries = false
   keepBackup = false
 [diff]
-  tool = p4merge
+  tool = vimdiff
 [difftool]
   prompt = false
 [rerere]
   enabled = true
 [push]
-	default = tracking
+  default = tracking
 [core]
-	excludesfile = ~/.gitignore_global
-	editor = vim
+  excludesfile = ~/.gitignore_global
+  autocrlf = input
 [branch]
   autosetupmerge=true
