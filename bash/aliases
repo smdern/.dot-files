@@ -1,0 +1,94 @@
+#!/bin/bash
+
+alias ls='ls -G'
+alias ll='ls -Al'
+alias l='ls -lrthG'
+alias mkdir='mkdir -p'
+alias which='type -a'
+alias ..='cd ..'
+
+alias du='du -kh'
+alias df='df -kTh'
+
+alias start_pow="launchctl load $HOME/Library/LaunchAgents/cx.pow.powd.plist"
+alias stop_pow="launchctl unload $HOME/Library/LaunchAgents/cx.pow.powd.plist"
+
+alias vim='mvim -v'
+
+alias r='`[ -e bin/r ] && echo bin/r || echo rails`'
+alias z='`[ -e .zeus.sock ] && echo zeus || echo SAD: Zeus is not running 1>&2`'
+alias zb='`[ -e .zeus.sock ] && echo zeus || echo bundle exec`'
+alias zs='(bundle check > /dev/null || bi); zk; rm .zeus.sock; reset; zeus start'
+alias zk='ps aux | grep zeus | grep -v grep | awk '"'"'{print $2}'"'"' | xargs kill -9'
+alias b='bundle exec'
+alias bo='bundle open'
+# We want to clean all of our gems sometimes, but not every time.
+# This will clean gems 10% of the time.
+# Game theory.
+alias bi='bundle install --binstubs bundle/bin && ( ( [ $RANDOM -gt 29490 ] && [ `rvm-prompt g` ] && bundle clean --force ); true )'
+alias c='cap'
+alias gs='guard --no-bundler-warning'
+alias f='git flow feature'
+alias release='git flow release'
+alias mig='rk db:migrate db:test:prepare'
+alias mqi='script/mergeq integration'
+alias mqd='script/mergeq develop'
+alias mqc='git commit --no-edit; script/mergeq --continue'
+alias ss='spring stop'
+alias frequency='history | awk '"'"'{CMD[$2]++;count++;}END { for (a in CMD)print CMD[a] " " CMD[a]/count*100 "% " a;}'"'"' | grep -v "./" | column -c3 -s " " -t | sort -nr | nl |  head -n10'
+alias bm='[[ :$PATH: != *:"$PWD/bin":* ]] && export PATH=$PWD/bin:$PATH'
+alias gg='git l $(current_tracking_branch)^...'
+
+function rk {
+  if [ -e bin/rake ]; then
+    bin/rake "$@"
+  else
+    zb rake "$@"
+  fi
+}
+
+function g {
+  if [[ $# > 0 ]]; then
+    hub "$@"
+  else
+    git status -sb
+  fi
+}
+complete -o bashdefault -o default -o nospace -F _git g 2>/dev/null || complete -o default -o nospace -F _git g
+
+alias gup='git smart-pull'
+alias gm='git smart-merge'
+alias gl='git smart-log'
+
+alias ssh='TERM=xterm-256color ssh'
+
+function current_branch {
+  branch_name="$(git rev-parse --symbolic-full-name --abbrev-ref HEAD 2>/dev/null)" ||
+    branch_name="(unnamed branch)"     # detached HEAD
+
+  echo $branch_name
+}
+
+function current_tracking_branch {
+  branch_name="$(git rev-parse --symbolic-full-name --abbrev-ref HEAD@{u} 2>/dev/null)" ||
+    branch_name=""
+
+  echo $branch_name
+}
+
+
+# Pause guard while checking out. Add below alias to .gitconfig:
+# co = "!bash -c 'pause_guard' ; git checkout $* ; bash -c 'unpause_guard'"
+
+# Autocomplete for my "git co"
+function _git_co {
+  _git_checkout $*
+}
+
+function pause_guard {
+  ps ax | grep -w "bin/[g]uard" | awk '{print $1}' | xargs kill -USR1
+}
+
+function unpause_guard {
+  ps ax | grep -w "bin/[g]uard" | awk '{print $1}' | xargs kill -USR2
+}
