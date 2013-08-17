@@ -12,7 +12,7 @@
   stat = status -s
   st = status -sb
   ci = commit
-  co = "!bash -c 'pause_guard' ; git checkout $* ; bash -c 'unpause_guard'"
+  co = checkout
   br = branch
   cp = cherry-pick
   m = merge --no-ff --no-commit
