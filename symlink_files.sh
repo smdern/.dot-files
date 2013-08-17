@@ -7,6 +7,7 @@ for P in *
 do
   # skip setup
   if [ "$P" = "setup.sh" ]; then continue; fi
+  if [ "$P" = "symlink_files.sh" ]; then continue; fi
 
   # ensure permissions
   chmod -R o-rwx,g-rwx $P
