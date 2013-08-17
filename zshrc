@@ -55,17 +55,16 @@ fi
 export EDITOR=vim
 
 path=(
-  $path
   ~/.rvm/bin
-  /usr/local/sbin
   /usr/local/bin
-  /usr/local/share/python
+  /usr/local/sbin
   /usr/bin:/bin
   /usr/sbin
   /sbin
   /usr/X11/bin
   /usr/local/share/npm/bin
   ~/.bin
+  $path
 )
 
 #Bindkey
@@ -125,5 +124,3 @@ function awklog {
   echo "awk ' /^$/ {flag=0} /Started.+$2/ {flag=1} flag { print }' $1"
   eval "awk ' /^$/ {flag=0} /Started.+$2/ {flag=1} flag { print }' $1"
 }
-
-
