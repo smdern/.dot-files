@@ -65,4 +65,4 @@ stty stop undef
 [[ -s "$HOME/nvm/nvm.sh" ]] && source "$HOME/nvm/nvm.sh"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 [[ -r $rvm_path/scripts/completion ]] && . $rvm_path/scripts/completion
-[[ -s /Users/aaronjensen/.nvm/nvm.sh ]] && . /Users/aaronjensen/.nvm/nvm.sh # This loads NVM
+[[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh # This loads NVM
