@@ -36,6 +36,8 @@ unsetopt correct_all
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
 
+[[ -s "$HOME/.nvm/nvm.sh" ]] && . "$HOME/.nvm/nvm.sh" # This loads NVM
+
 platform='unknown'
 unamestr=`uname`
 
