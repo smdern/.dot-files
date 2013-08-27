@@ -78,7 +78,7 @@
     "select_first": false,
     "series_id": null,
     "skip_file_on_error": true,
-    "valid_extensions": ["mkv", "avi", "mp4", "srt"],
+    "valid_extensions": ["mkv", "avi", "mp4"],
     "verbose": false,
     "windows_safe_filenames": true
 }
