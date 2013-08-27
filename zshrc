@@ -8,7 +8,6 @@ antigen bundle autojump
 antigen bundle git
 antigen bundle pow
 antigen bundle brew
-antigen bundle vi-mode
 antigen bundle command-not-found
 antigen bundle rvm
 antigen bundle heroku
