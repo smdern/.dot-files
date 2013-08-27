@@ -1,5 +1,5 @@
 {
-    "always_move": false,
+    "always_move": true,
     "always_rename": false,
     "batch": false,
     "custom_filename_character_blacklist": "",
@@ -9,7 +9,12 @@
     "filename_anime_with_episode_without_crc": "[%(group)s] %(seriesname)s - %(episode)s - %(episodename)s%(ext)s",
     "filename_anime_without_episode": "[%(group)s] %(seriesname)s - %(episode)s [%(crc)s]%(ext)s",
     "filename_anime_without_episode_without_crc": "[%(group)s] %(seriesname)s - %(episode)s%(ext)s",
-    "filename_blacklist": [], 
+    "filename_blacklist": [
+        {
+            "is_regex": true,
+            "match": ".*sample.*"
+        }
+    ],
     "filename_patterns": [
         "^\\[(?P<group>.+?)\\][ ]?               # group name, captured for [#100]\n        (?P<seriesname>.*?)[ ]?[-_][ ]?          # show name, padding, spaces?\n        (?P<episodenumberstart>\\d+)              # first episode number\n        ([-_]\\d+)*                               # optional repeating episodes\n        [-_](?P<episodenumberend>\\d+)            # last episode number\n        (?=                                      # Optional group for crc value (non-capturing)\n          .*                                     # padding\n          \\[(?P<crc>.+?)\\]                       # CRC value\n        )?                                       # End optional crc group\n        [^\\/]*$", 
         "^\\[(?P<group>.+?)\\][ ]?               # group name, captured for [#100]\n        (?P<seriesname>.*)                       # show name\n        [ ]?[-_][ ]?                             # padding and seperator\n        (?P<episodenumber>\\d+)                   # episode number\n        (?=                                      # Optional group for crc value (non-capturing)\n          .*                                     # padding\n          \\[(?P<crc>.+?)\\]                       # CRC value\n        )?                                       # End optional crc group\n        [^\\/]*$", 
@@ -48,7 +53,7 @@
     "language": "en",
     "lowercase_filename": false,
     "move_files_confirmation": true,
-    "move_files_destination": ".",
+    "move_files_destination": "/media/raid/TV Shows/%(seriesname)s/Season %(seasonnumber)d",
     "move_files_destination_date": ".",
     "move_files_destination_is_filepath": true,
     "move_files_enable": true,
@@ -68,12 +73,12 @@
     "overwrite_destination_on_move": false,
     "overwrite_destination_on_rename": false,
     "recursive": true,
-    "replace_invalid_characters_with": "_",
+    "replace_invalid_characters_with": "",
     "search_all_languages": false,
     "select_first": false,
     "series_id": null,
     "skip_file_on_error": true,
-    "valid_extensions": [],
+    "valid_extensions": ["mkv", "avi", "mp4", "srt"],
     "verbose": false,
     "windows_safe_filenames": true
 }
