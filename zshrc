@@ -11,6 +11,7 @@ antigen bundle brew
 antigen bundle command-not-found
 antigen bundle rvm
 antigen bundle heroku
+antigen bundle ssh-agent
 
 # ZSH Syntax highlighting
 antigen bundle zsh-users/zsh-syntax-highlighting
