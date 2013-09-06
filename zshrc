@@ -57,8 +57,9 @@ fi
 export EDITOR=vim
 
 path=(
-  ~/.rvm/bin
   /usr/local/bin
+  $path
+  ~/.rvm/bin
   /usr/local/sbin
   /usr/bin:/bin
   /usr/sbin
@@ -66,7 +67,6 @@ path=(
   /usr/X11/bin
   /usr/local/share/npm/bin
   ~/.bin
-  $path
 )
 
 #Bindkey
