@@ -67,7 +67,7 @@ path=(
   /usr/X11/bin
   /usr/local/share/npm/bin
   ~/.bin
-  $(npm bin)
+  ./node_modules/.bin
 )
 
 #Bindkey
