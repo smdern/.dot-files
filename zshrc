@@ -55,6 +55,7 @@ fi
 
 # Customize to your needs...
 export EDITOR=vim
+export GIT_PAGER='less -FRSX'
 
 path=(
   /usr/local/bin
@@ -83,8 +84,9 @@ alias df='df -kTh'
 
 alias r='bundle exec rails'
 alias gs='bundle exec guard start'
-alias rk='bundle exec rake'
-alias mig='bundle exec rake db:migrate db:test:prepare'
+alias mig='rk db:migrate db:test:prepare'
+
+alias zb='`[ -e .zeus.sock ] && echo zeus || echo bundle exec`'
 
 alias gf='git fetch'
 alias gm='git merge'
@@ -102,6 +104,14 @@ alias glx='git log --graph --all --decorate --pretty=format:"%C(magenta)%h %C(bl
 alias ll='ls -al'
 
 alias hglog='hg sglog | less -R'
+
+function rk {
+  if [ -e bin/rake ]; then
+    bin/rake "$@"
+  else
+    zb rake "$@"
+  fi
+}
 
 function __current_branch {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
