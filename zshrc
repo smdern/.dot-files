@@ -69,6 +69,7 @@ path=(
   /usr/local/share/npm/bin
   ~/.bin
   ./node_modules/.bin
+  ./bin
 )
 
 #Bindkey
@@ -112,6 +113,8 @@ function rk {
     zb rake "$@"
   fi
 }
+
+alias open-last-error-page='open "`ls -t error_pages/*.html | head -n1`"'
 
 function __current_branch {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'

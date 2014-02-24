@@ -44,7 +44,7 @@
   pretty=format:%C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset
 [merge]
   summary = false
-  tool = p4merge
+  tool = mvim3
   conflictstyle = diff3
 [mergetool]
   keepBackup = false
