@@ -54,7 +54,7 @@ elif [[ $platform == 'osx' ]]; then
 fi
 
 # Customize to your needs...
-export EDITOR=vim
+export EDITOR='mvim -v'
 export GIT_PAGER='less -FRSX'
 
 path=(
