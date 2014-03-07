@@ -1,5 +1,3 @@
-#eval `hub alias -s bash`
-
 #set -o vi
 
 export BASH_ENV='~/.bash/env'
@@ -29,17 +27,6 @@ fi
 export HOMEBREW_TEMP=/var/tmp
 export BUNDLER_EDITOR='/usr/local/bin/mvim -v'
 
-# git prompt goodnes
-GIT_PS1_SHOWDIRTYSTATE=true
-GIT_PS1_SHOWSTASHSTATE=true
-GIT_PS1_SHOWUNTRACKEDFILES=true
-GIT_PS1_SHOWUPSTREAM=verbose
-PS1="${COLOR_RED}[${COLOR_WHITE}\t ${COLOR_NONE}\W${COLOR_GREEN}\$(__git_ps1 ' (%s)')${COLOR_RED}]${COLOR_NONE}\$ "
-#export PROMPT_COMMAND='echo -ne "\033]0;${PWD/#$HOME/~}\007"'
-function name_tab() {
-  echo -ne "\033]0;$1\007"
-}
-
 # Erase duplicates in history
 export HISTCONTROL=erasedups
 # Store 10k history entries
@@ -48,7 +35,6 @@ export HISTSIZE=10000
 shopt -s histappend
 
 source ~/.bash/aliases
-[[ -f `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
 
 export RUBY_HEAP_MIN_SLOTS=1000000
 export RUBY_HEAP_FREE_MIN=500000
