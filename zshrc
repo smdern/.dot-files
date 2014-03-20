@@ -55,6 +55,7 @@ fi
 
 # Customize to your needs...
 export GIT_PAGER='less -FRSX'
+export NOEXEC_EXCLUDE='zeus'
 
 path=(
   /usr/local/bin
