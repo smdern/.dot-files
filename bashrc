@@ -48,7 +48,5 @@ export TCH_BUNDLE_INSTALL=bundle
 stty stop undef
 
 [[ -s "$HOME/.bash_private" ]] && source "$HOME/.bash_private"
-[[ -s "$HOME/nvm/nvm.sh" ]] && source "$HOME/nvm/nvm.sh"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 [[ -r $rvm_path/scripts/completion ]] && . $rvm_path/scripts/completion
-[[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh # This loads NVM
