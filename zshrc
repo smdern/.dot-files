@@ -112,7 +112,7 @@ function rk {
   fi
 }
 
-alias open-last-error-page='open "`ls -t error_pages/*.html | head -n1`"'
+function open-last-error() { "$( git rev-parse --show-toplevel )/bin/open_last_error" "$@" }
 
 function __current_branch {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
