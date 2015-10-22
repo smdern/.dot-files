@@ -56,6 +56,8 @@ export GIT_PAGER='less -FRSX'
 export NOEXEC_EXCLUDE='zeus'
 
 path=(
+  ./bin
+  ./node_modules/.bin
   /usr/local/bin
   $path
   ~/.rvm/bin
@@ -66,8 +68,6 @@ path=(
   /usr/X11/bin
   /usr/local/share/npm/bin
   ~/.bin
-  ./node_modules/.bin
-  ./bin
 )
 
 #Bindkey
