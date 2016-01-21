@@ -22,3 +22,4 @@ bundler_stubs
 .rspec
 *.orig
 .powenv
+.#*
