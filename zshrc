@@ -1,26 +1,32 @@
-source $HOME/.dot-files/antigen/antigen.zsh
+source "${HOME}/.dot-files/zgen/zgen.zsh"
 
-antigen use oh-my-zsh
+# After making a change here, do a zgen update and restart zsh
+if ! zgen saved; then
+  echo "Creating a zgen save"
 
-# Bundles from the default repo (robbyrussell's oh-my-zsh).
+  zgen oh-my-zsh
 
-antigen bundle autojump
-antigen bundle git
-antigen bundle pow
-antigen bundle brew
-antigen bundle command-not-found
-antigen bundle rvm
-antigen bundle heroku
-antigen bundle ssh-agent
+  # plugins
+  zgen oh-my-zsh plugins/autojump
+  zgen oh-my-zsh plugins/git
+  zgen oh-my-zsh plugins/lein
+  zgen oh-my-zsh plugins/mix-fast
+  zgen oh-my-zsh plugins/ruby
+  zgen oh-my-zsh plugins/rvm
+  zgen oh-my-zsh plugins/nvm
+  zgen load zsh-users/zsh-syntax-highlighting
+  zgen load zsh-users/zsh-autosuggestions
+  zgen load zsh-users/zsh-history-substring-search
+  zgen load rimraf/k
 
-# ZSH Syntax highlighting
-antigen bundle zsh-users/zsh-syntax-highlighting
+  # completions
+  zgen load zsh-users/zsh-completions src
 
-# Load the theme.
-antigen theme smdern/zsh-themes re5et.zsh-theme
+  # theme
+  zgen oh-my-zsh themes/re5et
 
-# Tell antigen that you're done
-antigen apply
+  zgen save
+fi
 
 # Comment this out to disable weekly auto-update checks
 DISABLE_AUTO_UPDATE="true"
