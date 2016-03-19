@@ -22,17 +22,15 @@ if ! zgen saved; then
   # completions
   zgen load zsh-users/zsh-completions src
 
-  # theme
-  zgen oh-my-zsh themes/re5et
-
   zgen save
 fi
 
-# Comment this out to disable weekly auto-update checks
-DISABLE_AUTO_UPDATE="true"
+source "${HOME}/.zsh/smdern.zsh-theme"
 
-# Uncomment following line if you want red dots to be displayed while waiting for completion
-COMPLETION_WAITING_DOTS="true"
+ZSH_HIGHLIGHT_STYLES[precommand]='none'
+ZSH_HIGHLIGHT_STYLES[path]='none'
+ZSH_HIGHLIGHT_STYLES[path_prefix]='none'
+ZSH_HIGHLIGHT_STYLES[path_approx]='fg=yellow'
 
 HISTSIZE=5000 # session history size
 SAVEHIST=1000 # saved history
