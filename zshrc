@@ -21,6 +21,7 @@ if ! zgen saved; then
 
   # completions
   zgen load zsh-users/zsh-completions src
+  zgen load felixr/docker-zsh-completion
 
   zgen save
 fi
@@ -76,6 +77,8 @@ path=(
 
 #Bindkey
 bindkey '^r' history-incremental-search-backward
+
+eval "$(direnv hook zsh)"
 
 #Aliases
 alias tmux2="tmux -2 attach"

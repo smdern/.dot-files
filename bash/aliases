@@ -10,10 +10,6 @@ alias ..='cd ..'
 alias du='du -kh'
 alias df='df -kTh'
 
-alias start_pow="launchctl load $HOME/Library/LaunchAgents/cx.pow.powd.plist"
-alias stop_pow="launchctl unload $HOME/Library/LaunchAgents/cx.pow.powd.plist"
-
-alias vim='mvim -v'
 
 alias r='`[ -e bin/r ] && echo bin/r || echo rails`'
 alias z='`[ -e .zeus.sock ] && echo zeus || echo SAD: Zeus is not running 1>&2`'
@@ -38,6 +34,16 @@ alias ss='spring stop'
 alias frequency='history | awk '"'"'{CMD[$2]++;count++;}END { for (a in CMD)print CMD[a] " " CMD[a]/count*100 "% " a;}'"'"' | grep -v "./" | column -c3 -s " " -t | sort -nr | nl |  head -n10'
 alias bm='[[ :$PATH: != *:"$PWD/bin":* ]] && export PATH=$PWD/bin:$PATH'
 alias gg='git l $(current_tracking_branch)^...'
+
+unamestr=`uname`
+if [[ "$unamestr" == 'Darwin' ]]; then
+  alias start_pow="launchctl load $HOME/Library/LaunchAgents/cx.pow.powd.plist"
+  alias stop_pow="launchctl unload $HOME/Library/LaunchAgents/cx.pow.powd.plist"
+
+  alias vim='mvim -v'
+elif [[ "$unamestr" == 'Linux' ]]; then
+  alias vim='gvim -v'
+fi
 
 function rk {
   if [ -e bin/rake ]; then
@@ -75,7 +81,6 @@ function current_tracking_branch {
 
   echo $branch_name
 }
-
 
 # Pause guard while checking out. Add below alias to .gitconfig:
 # co = "!bash -c 'pause_guard' ; git checkout $* ; bash -c 'unpause_guard'"

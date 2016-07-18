@@ -23,3 +23,8 @@ bundler_stubs
 *.orig
 .powenv
 .#*
+
+.projectile
+
+.github_access_token
+.trello_member_token
