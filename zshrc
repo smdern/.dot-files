@@ -39,7 +39,7 @@ HISTFILE=~/.zshistory # history file
 
 unsetopt correct_all
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
+
 
 platform='unknown'
 unamestr=`uname`
@@ -53,6 +53,7 @@ fi
 if [[ $platform == 'linux' ]]; then
   source ~/.zshrc-linux
 elif [[ $platform == 'osx' ]]; then
+  eval "$(direnv hook zsh)"
   source ~/.zshrc-osx
 fi
 
@@ -78,7 +79,6 @@ path=(
 #Bindkey
 bindkey '^r' history-incremental-search-backward
 
-eval "$(direnv hook zsh)"
 
 #Aliases
 alias tmux2="tmux -2 attach"
@@ -148,3 +148,8 @@ function awklog {
 }
 . /Users/shaun/.asdf/asdf.sh
 . /Users/shaun/.asdf/completions/asdf.bash
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export FZF_DEFAULT_COMMAND='ag -g ""'
+export FZF_TMUX=0

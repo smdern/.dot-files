@@ -1,8 +1,8 @@
-#set -o vi
+set -o vi
 
 export BASH_ENV='~/.bash/env'
-export EDITOR='mvim -v'
-export VISUAL='mvim -v'
+export EDITOR='vim'
+export VISUAL='vim'
 export TM_GIT=/usr/local/bin/git
 
 export CUCUMBER_FORMAT=Cucumber::Formatter::Fuubar
@@ -20,12 +20,16 @@ export NODE_PATH=/usr/local/lib/node:/usr/local/lib/node_modules
 source ~/.bash/colors
 export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
 
-if [ -f `brew --prefix`/etc/bash_completion ]; then
-  . `brew --prefix`/etc/bash_completion
-fi
+# unamestr=`uname`
+# if [[ "$unamestr" == 'Darwin' ]]; then
+#   if [ -f `brew --prefix`/etc/bash_completion ]; then
+#     . `brew --prefix`/etc/bash_completion
+#   fi
+# fi
+
 
 export HOMEBREW_TEMP=/var/tmp
-export BUNDLER_EDITOR='/usr/local/bin/mvim -v'
+export BUNDLER_EDITOR='vim'
 
 # Erase duplicates in history
 export HISTCONTROL=erasedups
@@ -50,3 +54,7 @@ stty stop undef
 [[ -s "$HOME/.bash_private" ]] && source "$HOME/.bash_private"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 [[ -r $rvm_path/scripts/completion ]] && . $rvm_path/scripts/completion
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+export FZF_DEFAULT_COMMAND='ag -g ""'
+export FZF_TMUX=0
