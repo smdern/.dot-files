@@ -39,10 +39,6 @@ unamestr=`uname`
 if [[ "$unamestr" == 'Darwin' ]]; then
   alias start_pow="launchctl load $HOME/Library/LaunchAgents/cx.pow.powd.plist"
   alias stop_pow="launchctl unload $HOME/Library/LaunchAgents/cx.pow.powd.plist"
-
-  alias vim='mvim -v'
-elif [[ "$unamestr" == 'Linux' ]]; then
-  alias vim='gvim -v'
 fi
 
 function rk {

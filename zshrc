@@ -61,6 +61,8 @@ fi
 export GIT_PAGER='less -FRSX'
 export NOEXEC_EXCLUDE='zeus'
 
+export NVIM_TUI_ENABLE_TRUE_COLOR=1
+
 path=(
   ./bin
   ./node_modules/.bin
