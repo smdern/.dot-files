@@ -28,3 +28,4 @@ bundler_stubs
 
 .github_access_token
 .trello_member_token
+.mix_tasks
