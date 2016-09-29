@@ -6,4 +6,4 @@ alias vim="nvim"
 alias start_pow="launchctl load $HOME/Library/LaunchAgents/cx.pow.powd.plist"
 alias stop_pow="launchctl unload $HOME/Library/LaunchAgents/cx.pow.powd.plist"
 
-export EDITOR='vim'
+export EDITOR='nvim'

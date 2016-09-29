@@ -124,6 +124,19 @@ function rk {
 # function open-last-error() { "$( git rev-parse --show-toplevel )/bin/open_last_error" "$@" }
 alias open-last-error-page='open "`ls -t error_pages/*.html | head -n1`"'
 
+# Use C-z to switch back to fg
+fancy-ctrl-z () {
+  if [[ $#BUFFER -eq 0 ]]; then
+      BUFFER="fg"
+      zle accept-line
+  else
+    zle push-input
+    zle clear-screen
+  fi
+}
+zle -N fancy-ctrl-z
+bindkey '^Z' fancy-ctrl-z
+
 function __current_branch {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
 }

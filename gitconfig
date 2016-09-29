@@ -44,7 +44,7 @@
   pretty=format:%C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset
 [merge]
   summary = false
-  tool = mvim3
+  tool = nvim
   conflictstyle = diff3
 [mergetool]
   keepBackup = false
@@ -54,6 +54,10 @@
   keepBackup = false
   keepTemporaries = false
   cmd=/usr/local/bin/mvim -v -f -d -c \"wincmd J\" \"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
+[mergetool "nvim"]
+  keepBackup = false
+  keepTemporaries = false
+  cmd=/usr/local/bin/nvim -v -f -d -c \"wincmd J\" \"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
 [mergetool "p4merge"]
   keepTemporaries = false
   keepBackup = false
