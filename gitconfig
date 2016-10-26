@@ -44,7 +44,7 @@
   pretty=format:%C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset
 [merge]
   summary = false
-  tool = nvim
+  tool = p4merge
   conflictstyle = diff3
 [mergetool]
   keepBackup = false
@@ -74,3 +74,5 @@
   autocrlf = input
 [branch]
   autosetupmerge=true
+[commit]
+  gpgsign = true
