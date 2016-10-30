@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+git log --pretty=format:user:%aN%n%at --reverse --raw \
+--encoding=UTF-8 --no-renames --after={4.weeks.ago} \
+> git.log
+
+gource \
+--seconds-per-day .001 \
+-1280x720 \
+--auto-skip-seconds .001 \
+--multi-sampling \
+--stop-at-end \
+--file-idle-time 15 \
+--max-files 0 \
+--output-ppm-stream - \
+--output-framerate 30 \
+git.log \
+| ffmpeg -y -r 60 -f image2pipe -vcodec ppm -i - -vcodec libx264 -preset ultrafast -pix_fmt yuv420p -crf 1 -an -threads 0 -bf 0 gource.mp4

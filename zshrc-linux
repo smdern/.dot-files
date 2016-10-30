@@ -1,6 +1,6 @@
-alias vim="gvim -v"
+alias vim="nvim"
 alias ls='ls -G --color=auto'
 alias ack="ag"
-alias mvim="gvim -v"
+alias mvim="vim"
 
-export EDITOR='gvim -v'
+export EDITOR='vim'

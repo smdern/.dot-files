@@ -9,15 +9,15 @@ if ! zgen saved; then
   # plugins
   zgen oh-my-zsh plugins/autojump
   zgen oh-my-zsh plugins/git
-  zgen oh-my-zsh plugins/lein
   zgen oh-my-zsh plugins/mix-fast
   zgen oh-my-zsh plugins/ruby
   zgen oh-my-zsh plugins/rvm
   zgen oh-my-zsh plugins/nvm
+  zgen oh-my-zsh plugins/asdf
+  zgen oh-my-zsh plugins/ssh-agent
   zgen load zsh-users/zsh-syntax-highlighting
   zgen load zsh-users/zsh-autosuggestions
   zgen load zsh-users/zsh-history-substring-search
-  zgen load rimraf/k
 
   # completions
   zgen load zsh-users/zsh-completions src
@@ -39,7 +39,7 @@ HISTFILE=~/.zshistory # history file
 
 unsetopt correct_all
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
+
 
 platform='unknown'
 unamestr=`uname`
@@ -56,9 +56,13 @@ elif [[ $platform == 'osx' ]]; then
   source ~/.zshrc-osx
 fi
 
+command -v direnv >/dev/null 2>&1 && eval "$(direnv hook zsh)"
+
 # Customize to your needs...
 export GIT_PAGER='less -FRSX'
 export NOEXEC_EXCLUDE='zeus'
+
+export NVIM_TUI_ENABLE_TRUE_COLOR=1
 
 path=(
   ./bin
@@ -78,7 +82,6 @@ path=(
 #Bindkey
 bindkey '^r' history-incremental-search-backward
 
-eval "$(direnv hook zsh)"
 
 #Aliases
 alias tmux2="tmux -2 attach"
@@ -106,6 +109,7 @@ alias gdc="git diff --cached"
 
 alias glxx='git log --graph --all --decorate'
 alias glx='git log --graph --all --decorate --pretty=format:"%C(magenta)%h %C(blue)%ai %C(green)%an %C(cyan)%s %C(yellow bold)%d"'
+alias gco='git checkout $(git branch -a | cut -c 3- | sed '"'"'s/^remotes\/[^/]*\///'"'"' | sort | uniq | grep -v HEAD | fzf-tmux -d 20)'
 
 alias ll='ls -al'
 
@@ -121,6 +125,19 @@ function rk {
 
 # function open-last-error() { "$( git rev-parse --show-toplevel )/bin/open_last_error" "$@" }
 alias open-last-error-page='open "`ls -t error_pages/*.html | head -n1`"'
+
+# Use C-z to switch back to fg
+fancy-ctrl-z () {
+  if [[ $#BUFFER -eq 0 ]]; then
+      BUFFER="fg"
+      zle accept-line
+  else
+    zle push-input
+    zle clear-screen
+  fi
+}
+zle -N fancy-ctrl-z
+bindkey '^Z' fancy-ctrl-z
 
 function __current_branch {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
@@ -146,3 +163,10 @@ function awklog {
   echo "awk ' /^$/ {flag=0} /Started.+$2/ {flag=1} flag { print }' $1"
   eval "awk ' /^$/ {flag=0} /Started.+$2/ {flag=1} flag { print }' $1"
 }
+[ -f ~/.asdf/asdf.s ] && source ~/.asdf/asdf.sh
+[ -f ~/.asdf/completions/asdf.bash ] && source ~/.asdf/completions/asdf.bash
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export FZF_DEFAULT_COMMAND='ag -g ""'
+export FZF_TMUX=0

@@ -1,9 +1,9 @@
 export ANDROID_HOME=/usr/local/opt/android-sdk
 export ANDROID_KEYSTORE="/Users/shaun/.android/debug.keystore"
 
-alias vim="mvim -v"
+alias vim="nvim"
 
 alias start_pow="launchctl load $HOME/Library/LaunchAgents/cx.pow.powd.plist"
 alias stop_pow="launchctl unload $HOME/Library/LaunchAgents/cx.pow.powd.plist"
 
-export EDITOR='mvim -v'
+export EDITOR='nvim'
