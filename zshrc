@@ -170,3 +170,5 @@ function awklog {
 
 export FZF_DEFAULT_COMMAND='ag -g ""'
 export FZF_TMUX=0
+
+export PATH="$HOME/.yarn/bin:$PATH"
