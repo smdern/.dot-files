@@ -74,5 +74,3 @@
   autocrlf = input
 [branch]
   autosetupmerge=true
-[commit]
-  gpgsign = true

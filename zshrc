@@ -9,15 +9,15 @@ if ! zgen saved; then
   # plugins
   zgen oh-my-zsh plugins/autojump
   zgen oh-my-zsh plugins/git
-  zgen oh-my-zsh plugins/lein
   zgen oh-my-zsh plugins/mix-fast
   zgen oh-my-zsh plugins/ruby
   zgen oh-my-zsh plugins/rvm
   zgen oh-my-zsh plugins/nvm
+  zgen oh-my-zsh plugins/asdf
+  zgen oh-my-zsh plugins/ssh-agent
   zgen load zsh-users/zsh-syntax-highlighting
   zgen load zsh-users/zsh-autosuggestions
   zgen load zsh-users/zsh-history-substring-search
-  zgen load rimraf/k
 
   # completions
   zgen load zsh-users/zsh-completions src
