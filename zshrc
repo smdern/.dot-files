@@ -53,9 +53,10 @@ fi
 if [[ $platform == 'linux' ]]; then
   source ~/.zshrc-linux
 elif [[ $platform == 'osx' ]]; then
-  eval "$(direnv hook zsh)"
   source ~/.zshrc-osx
 fi
+
+command -v direnv >/dev/null 2>&1 && eval "$(direnv hook zsh)"
 
 # Customize to your needs...
 export GIT_PAGER='less -FRSX'
