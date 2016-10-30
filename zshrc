@@ -162,8 +162,8 @@ function awklog {
   echo "awk ' /^$/ {flag=0} /Started.+$2/ {flag=1} flag { print }' $1"
   eval "awk ' /^$/ {flag=0} /Started.+$2/ {flag=1} flag { print }' $1"
 }
-. /Users/shaun/.asdf/asdf.sh
-. /Users/shaun/.asdf/completions/asdf.bash
+[ -f ~/.asdf/asdf.s ] && source ~/.asdf/asdf.sh
+[ -f ~/.asdf/completions/asdf.bash ] && source ~/.asdf/completions/asdf.bash
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
