@@ -13,7 +13,6 @@ if ! zgen saved; then
   zgen oh-my-zsh plugins/ruby
   zgen oh-my-zsh plugins/rvm
   zgen oh-my-zsh plugins/nvm
-  zgen oh-my-zsh plugins/asdf
   zgen oh-my-zsh plugins/ssh-agent
   zgen load zsh-users/zsh-syntax-highlighting
   zgen load zsh-users/zsh-autosuggestions
@@ -68,6 +67,7 @@ path=(
   ./bin
   ./node_modules/.bin
   /usr/local/bin
+  /.yarn/bin
   $path
   ~/.rvm/bin
   /usr/local/sbin
@@ -163,12 +163,11 @@ function awklog {
   echo "awk ' /^$/ {flag=0} /Started.+$2/ {flag=1} flag { print }' $1"
   eval "awk ' /^$/ {flag=0} /Started.+$2/ {flag=1} flag { print }' $1"
 }
-[ -f ~/.asdf/asdf.s ] && source ~/.asdf/asdf.sh
-[ -f ~/.asdf/completions/asdf.bash ] && source ~/.asdf/completions/asdf.bash
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export FZF_DEFAULT_COMMAND='ag -g ""'
 export FZF_TMUX=0
 
-export PATH="$HOME/.yarn/bin:$PATH"
+. $HOME/.asdf/asdf.sh
+. $HOME/.asdf/completions/asdf.bash
