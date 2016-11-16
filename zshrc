@@ -38,8 +38,6 @@ HISTFILE=~/.zshistory # history file
 
 unsetopt correct_all
 
-
-
 platform='unknown'
 unamestr=`uname`
 
@@ -169,5 +167,5 @@ function awklog {
 export FZF_DEFAULT_COMMAND='ag -g ""'
 export FZF_TMUX=0
 
-. $HOME/.asdf/asdf.sh
-. $HOME/.asdf/completions/asdf.bash
+[ -f ~/.asdf/asdf.sh ] && source ~/.asdf/asdf.sh
+[ -f ~/.asdf/completions/asdf.bash ] && source ~/.asdf/completions/asdf.bash
