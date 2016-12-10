@@ -1,6 +1,0 @@
-alias vim="nvim"
-alias ls='ls -G --color=auto'
-alias ack="ag"
-alias mvim="vim"
-
-export EDITOR='vim'

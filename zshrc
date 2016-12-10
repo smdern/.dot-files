@@ -1,31 +1,32 @@
 source "${HOME}/.dot-files/zgen/zgen.zsh"
 
-# After making a change here, do a zgen update and restart zsh
+#After making a change here, do a zgen update and restart zsh
 if ! zgen saved; then
   echo "Creating a zgen save"
 
-  zgen oh-my-zsh
+  # zgen oh-my-zsh
 
   # plugins
-  zgen oh-my-zsh plugins/autojump
-  zgen oh-my-zsh plugins/git
-  zgen oh-my-zsh plugins/mix-fast
-  zgen oh-my-zsh plugins/ruby
-  zgen oh-my-zsh plugins/rvm
-  zgen oh-my-zsh plugins/nvm
-  zgen oh-my-zsh plugins/ssh-agent
+
+  # zgen oh-my-zsh plugins/autojump
+  # zgen oh-my-zsh plugins/git
+  # zgen oh-my-zsh plugins/mix-fast
+  # zgen oh-my-zsh plugins/rvm
+  # zgen oh-my-zsh plugins/nvm
+  # zgen oh-my-zsh plugins/ssh-agent
   zgen load zsh-users/zsh-syntax-highlighting
   zgen load zsh-users/zsh-autosuggestions
   zgen load zsh-users/zsh-history-substring-search
+  zgen load mafredri/zsh-async
+  zgen load sindresorhus/pure
 
   # completions
   zgen load zsh-users/zsh-completions src
-  zgen load felixr/docker-zsh-completion
 
   zgen save
 fi
 
-source "${HOME}/.zsh/smdern.zsh-theme"
+# source "${HOME}/.zsh/smdern.zsh-theme"
 
 ZSH_HIGHLIGHT_STYLES[precommand]='none'
 ZSH_HIGHLIGHT_STYLES[path]='none'
@@ -39,28 +40,12 @@ HISTFILE=~/.zshistory # history file
 
 unsetopt correct_all
 
-platform='unknown'
-unamestr=`uname`
-
-if [[ "$unamestr" == 'Darwin' ]]; then
-   platform='osx'
-elif [[ "$unamestr" == 'Linux' ]]; then
-   platform='linux'
-fi
-
-if [[ $platform == 'linux' ]]; then
-  source ~/.zshrc-linux
-elif [[ $platform == 'osx' ]]; then
-  source ~/.zshrc-osx
-fi
-
 command -v direnv >/dev/null 2>&1 && eval "$(direnv hook zsh)"
+
+export EDITOR='vim'
 
 # Customize to your needs...
 export GIT_PAGER='less -FRSX'
-export NOEXEC_EXCLUDE='zeus'
-
-export NVIM_TUI_ENABLE_TRUE_COLOR=1
 
 path=(
   ./bin
@@ -78,10 +63,6 @@ path=(
   ~/.bin
 )
 
-#Bindkey
-bindkey '^r' history-incremental-search-backward
-
-
 #Aliases
 alias tmux2="tmux -2 attach"
 alias mkdir='mkdir -p'
@@ -93,8 +74,6 @@ alias df='df -kTh'
 alias r='bundle exec rails'
 alias gs='bundle exec guard start'
 alias mig='rk db:migrate db:test:prepare'
-
-alias zb='`[ -e .zeus.sock ] && echo zeus || echo bundle exec`'
 
 alias gf='git fetch'
 alias gm='git merge'
@@ -166,7 +145,6 @@ function awklog {
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export FZF_DEFAULT_COMMAND='ag -g ""'
-export FZF_TMUX=0
 
 [ -f ~/.asdf/asdf.sh ] && source ~/.asdf/asdf.sh
 [ -f ~/.asdf/completions/asdf.bash ] && source ~/.asdf/completions/asdf.bash

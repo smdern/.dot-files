@@ -30,3 +30,4 @@ bundler_stubs
 .trello_member_token
 .mix_tasks
 .tern-port
+.tern-project
