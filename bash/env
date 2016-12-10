@@ -1,5 +1,2 @@
 shopt -s expand_aliases
 source ~/.bash/aliases
-
-export FZF_DEFAULT_COMMAND='ag -g ""'
-export FZF_TMUX=0

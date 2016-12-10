@@ -14,19 +14,8 @@ export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/opt/local/bin:/
 export PATH="/usr/local/heroku/bin:$PATH"
 export NODE_PATH=/usr/local/lib/node:/usr/local/lib/node_modules
 
-#complete -o default -o nospace -F __git_flow_feature f
-#complete -o default -o nospace -F __git_flow_release release
-
 source ~/.bash/colors
 export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
-
-# unamestr=`uname`
-# if [[ "$unamestr" == 'Darwin' ]]; then
-#   if [ -f `brew --prefix`/etc/bash_completion ]; then
-#     . `brew --prefix`/etc/bash_completion
-#   fi
-# fi
-
 
 export HOMEBREW_TEMP=/var/tmp
 export BUNDLER_EDITOR='vim'
@@ -57,5 +46,3 @@ stty stop undef
 
 [ -f ~/.asdf/asdf.sh ] && source ~/.asdf/asdf.sh
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-export FZF_DEFAULT_COMMAND='ag -g ""'
-export FZF_TMUX=0
