@@ -31,6 +31,7 @@ ZSH_HIGHLIGHT_STYLES[precommand]='none'
 ZSH_HIGHLIGHT_STYLES[path]='none'
 ZSH_HIGHLIGHT_STYLES[path_prefix]='none'
 ZSH_HIGHLIGHT_STYLES[path_approx]='fg=yellow'
+ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=5
 
 HISTSIZE=5000 # session history size
 SAVEHIST=1000 # saved history
