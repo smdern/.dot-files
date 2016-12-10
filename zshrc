@@ -4,16 +4,8 @@ source "${HOME}/.dot-files/zgen/zgen.zsh"
 if ! zgen saved; then
   echo "Creating a zgen save"
 
-  # zgen oh-my-zsh
-
   # plugins
 
-  # zgen oh-my-zsh plugins/autojump
-  # zgen oh-my-zsh plugins/git
-  # zgen oh-my-zsh plugins/mix-fast
-  # zgen oh-my-zsh plugins/rvm
-  # zgen oh-my-zsh plugins/nvm
-  # zgen oh-my-zsh plugins/ssh-agent
   zgen load zsh-users/zsh-syntax-highlighting
   zgen load zsh-users/zsh-autosuggestions
   zgen load zsh-users/zsh-history-substring-search
@@ -25,8 +17,6 @@ if ! zgen saved; then
 
   zgen save
 fi
-
-# source "${HOME}/.zsh/smdern.zsh-theme"
 
 ZSH_HIGHLIGHT_STYLES[precommand]='none'
 ZSH_HIGHLIGHT_STYLES[path]='none'
