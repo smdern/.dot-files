@@ -79,6 +79,7 @@ alias glxx='git log --graph --all --decorate'
 alias glx='git log --graph --all --decorate --pretty=format:"%C(magenta)%h %C(blue)%ai %C(green)%an %C(cyan)%s %C(yellow bold)%d"'
 alias gco='git checkout $(git branch -a | cut -c 3- | sed '"'"'s/^remotes\/[^/]*\///'"'"' | sort | uniq | grep -v HEAD | fzf-tmux -d 20)'
 
+alias ls='ls -G'
 alias ll='ls -al'
 
 alias hglog='hg sglog | less -R'
