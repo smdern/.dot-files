@@ -1,24 +1,22 @@
-set -o vi
+#eval `hub alias -s bash`
+
+#set -o vi
+source ~/.shellrc
 
 export BASH_ENV='~/.bash/env'
-export EDITOR='vim'
-export VISUAL='vim'
-export TM_GIT=/usr/local/bin/git
-
-export CUCUMBER_FORMAT=Cucumber::Formatter::Fuubar
-export RSPEC_FORMAT=Fuubar
-export PARALLEL_TEST_PROCESSORS=2
-
-export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/opt/local/bin:/opt/local/sbin:/usr/local/share/npm/bin:/usr/local/share/python:~/.bin:$PATH:$HOME/.rvm/bin
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
-export NODE_PATH=/usr/local/lib/node:/usr/local/lib/node_modules
-
-source ~/.bash/colors
 export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
 
-export HOMEBREW_TEMP=/var/tmp
-export BUNDLER_EDITOR='vim'
+if [ -f `brew --prefix`/etc/bash_completion ]; then
+  . `brew --prefix`/etc/bash_completion
+fi
+
+# git prompt goodnes
+GIT_PS1_SHOWDIRTYSTATE=true
+GIT_PS1_SHOWSTASHSTATE=true
+GIT_PS1_SHOWUNTRACKEDFILES=true
+GIT_PS1_SHOWUPSTREAM=verbose
+PS1="${COLOR_RED}[${COLOR_WHITE}\t ${COLOR_NONE}\W${COLOR_GREEN}\$(__git_ps1 ' (%s)')${COLOR_RED}]${COLOR_NONE}\$ "
+#export PROMPT_COMMAND='echo -ne "\033]0;${PWD/#$HOME/~}\007"'
 
 # Erase duplicates in history
 export HISTCONTROL=erasedups
@@ -26,23 +24,15 @@ export HISTCONTROL=erasedups
 export HISTSIZE=10000
 # Append to the history file when exiting instead of overwriting it
 shopt -s histappend
+shopt -s globstar
 
-source ~/.bash/aliases
-
-export RUBY_HEAP_MIN_SLOTS=1000000
-export RUBY_HEAP_FREE_MIN=500000
-export RUBY_HEAP_SLOTS_INCREMENT=1000000
-export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
-export RUBY_GC_MALLOC_LIMIT=100000000
-export RUBY_FREE_MIN=$RUBY_HEAP_FREE_MIN
-export TCH_BUNDLE_INSTALL=bundle
+[[ -f `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
 
 # Free up ^S for i-search
 stty stop undef
 
 [[ -s "$HOME/.bash_private" ]] && source "$HOME/.bash_private"
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-[[ -r $rvm_path/scripts/completion ]] && . $rvm_path/scripts/completion
 
-[ -f ~/.asdf/asdf.sh ] && source ~/.asdf/asdf.sh
+command -v direnv >/dev/null 2>&1 && eval "$(direnv hook bash)"
+
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
