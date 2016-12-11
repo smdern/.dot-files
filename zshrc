@@ -11,12 +11,15 @@ if ! zgen saved; then
   zgen load zsh-users/zsh-history-substring-search
   zgen load mafredri/zsh-async
   zgen load sindresorhus/pure
+  zgen load uvaes/fzf-marks
 
   # completions
   zgen load zsh-users/zsh-completions src
 
   zgen save
 fi
+
+alias j='jump'
 
 # This speeds up pasting w/ autosuggest
 ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=5
