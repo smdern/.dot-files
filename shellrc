@@ -4,10 +4,8 @@ source ~/.bash/aliases
 # Path stuff
 
 # Reset PATH in case ZSHENV gets loaded more than once.
-export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin
+export PATH='/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin'
 export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/opt/local/bin:/opt/local/sbin:/usr/local/share/npm/bin:~/.bin:$PATH
-export PATH=~/.yarn/bin:$PATH
-export PATH=./bin:./node_modules/.bin:$PATH
 
 export EDITOR='vim'
 export VISUAL='vim'
