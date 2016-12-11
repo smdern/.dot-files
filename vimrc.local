@@ -1,8 +1,0 @@
-color molokai
-
-set winheight=20
-set winwidth=115
-
-set guifont=Inconsolata-g\ for\ Powerline:h12
-
-set shell=/bin/bash

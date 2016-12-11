@@ -5,11 +5,9 @@ source ~/.bash/aliases
 
 # Reset PATH in case ZSHENV gets loaded more than once.
 export PATH='/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin'
-export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/opt/local/bin:/opt/local/sbin:/usr/local/share/npm/bin:~/.bin:$PATH"
-export PATH="~/.yarn/bin:$PATH"
-export PATH="./bin:./node_modules/.bin:$PATH"
-export PATH="$HOME/Library/Haskell/bin:$PATH"
-export PATH="/usr/local/heroku/bin:$PATH"
+export PATH='/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/opt/local/bin:/opt/local/sbin:/usr/local/share/npm/bin:~/.bin:$PATH'
+export PATH='~/.yarn/bin:$PATH'
+export PATH='./bin:./node_modules/.bin:$PATH'
 
 export EDITOR='vim'
 export VISUAL='vim'
@@ -28,9 +26,9 @@ export RUBY_FREE_MIN=$RUBY_HEAP_FREE_MIN
 export RUBY_GC_MALLOC_LIMIT=100000000
 export RUBY_GC_HEAP_FREE_SLOTS=$RUBY_FREE_MIN
 export RUBY_GC_HEAP_INIT_SLOTS=$RUBY_HEAP_MIN_SLOTS
-export NOEXEC_EXCLUDE="zeus spring"
+export NOEXEC_EXCLUDE='zeus spring'
 export PARALLEL_TEST_PROCESSORS=2
-export BUNDLER_EDITOR='/usr/local/bin/mvim -v'
+export BUNDLER_EDITOR='vim'
 
 # Projects
 
