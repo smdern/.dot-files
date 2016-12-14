@@ -1,7 +1,3 @@
-[user]
-  name = Shaun Dern
-  email = shaun@substantial.com
-
 [color]
   diff = auto
   status = auto
@@ -74,3 +70,5 @@
   autocrlf = input
 [branch]
   autosetupmerge=true
+[include]
+  path = ~/.gitconfig_private
