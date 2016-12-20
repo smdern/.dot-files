@@ -4,12 +4,11 @@ source "${HOME}/.dot-files/zgen/zgen.zsh"
 if ! zgen saved; then
   echo "Creating a zgen save"
 
+  zgen oh-my-zsh
   # plugins
   zgen load zsh-users/zsh-syntax-highlighting
   zgen load zsh-users/zsh-autosuggestions
   zgen load zsh-users/zsh-history-substring-search
-  zgen load mafredri/zsh-async
-  zgen load sindresorhus/pure
   zgen load uvaes/fzf-marks
 
   # completions
@@ -18,10 +17,10 @@ if ! zgen saved; then
   zgen save
 fi
 
-alias j='jump'
+source "${HOME}/.zsh/aaronjensen.zsh-theme"
 
 # This speeds up pasting w/ autosuggest
-ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=5
+ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=15
 
 if [ -z "$HISTFILE" ]; then
   HISTFILE=$HOME/.zsh_history
