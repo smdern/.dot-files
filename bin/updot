@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+echo Updating dotfiles
+cd ~/.dotfiles && git fetch && git rebase HEAD@{u}
+echo
+
+echo Updating spacemacs.d
+cd ~/.spacemacs.d && git fetch && git rebase HEAD@{u}
+echo
+
+echo Updating emacs.d
+cd ~/.emacs.d && git fetch && git rebase HEAD@{u}
+echo
+
+echo Updating dotfiles-private
+cd ~/.dotfiles-private && git fetch && git rebase HEAD@{u}
+echo
+
+echo Updating vim
+cd ~/.vim && git fetch && git rebase HEAD@{u}
+echo
+
+echo Updating nvim
+cd ~/.config/nvim && git fetch && git rebase HEAD@{u}
