@@ -1,4 +1,4 @@
-source "${HOME}/.dot-files/zgen/zgen.zsh"
+source "${HOME}/.dotfiles/zgen/zgen.zsh"
 
 #After making a change here, do a zgen update and restart zsh
 if ! zgen saved; then
