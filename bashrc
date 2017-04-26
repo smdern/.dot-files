@@ -1,3 +1,4 @@
+#shellcheck shell=bash
 #eval `hub alias -s bash`
 
 #set -o vi
@@ -26,7 +27,7 @@ export HISTSIZE=10000
 shopt -s histappend
 shopt -s globstar
 
-[[ -f `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
+[[ -f "$(brew --prefix)"/etc/autojump.sh ]] && . "$(brew --prefix)"/etc/autojump.sh
 
 # Free up ^S for i-search
 stty stop undef

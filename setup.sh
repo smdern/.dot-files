@@ -1,11 +1,12 @@
-#!/bin/sh
+#!/bin/bash
 
-[[ -d ~/.tmux/plugins/tpm ]] || ( \
-  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm \
-)
+if [ ! -d ~/.tmux/plugins/tpm ]; then
+  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+  ~/.tmux/plugins/tpm/bin/install_plugins
+fi
 
-cd `dirname $0`
-F=`pwd |sed -e "s#$HOME/\?##"`
+cd "$(dirname "$0")" || exit 1
+F=$(pwd |sed -e "s#$HOME/\?##")
 
 for P in *
 do
