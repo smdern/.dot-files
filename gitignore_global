@@ -25,6 +25,7 @@ bundler_stubs
 .#*
 
 .projectile
+.dir-locals.el
 
 .github_access_token
 .trello_member_token
