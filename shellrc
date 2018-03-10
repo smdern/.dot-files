@@ -44,3 +44,4 @@ export PATH=${PATH}:${ANDROID_HOME}/platform-tools
 export FZF_DEFAULT_COMMAND='ag -g ""'
 export FZF_DEFAULT_OPTS='--inline-info -d 15'
 export FZF_TMUX_HEIGHT=20
+export PATH=$PATH:$HOME/.git-radar
