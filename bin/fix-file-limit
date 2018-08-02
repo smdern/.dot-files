@@ -1,0 +1,6 @@
+if ! [[ -f  /Library/LaunchDaemons/limit.maxfiles.plist ]]; then
+  echo "Bumping maxfiles (requires sudo)"
+  sudo cp ~/.dotfiles/extra/limit.maxfiles.plist /Library/LaunchDaemons/
+  sudo chown root:wheel /Library/LaunchDaemons/limit.maxfiles.plist
+  sudo launchctl load -w /Library/LaunchDaemons/limit.maxfiles.plist
+fi
