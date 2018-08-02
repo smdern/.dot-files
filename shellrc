@@ -11,6 +11,7 @@ export PATH="$HOME/Library/Haskell/bin:$PATH"
 export PATH="/usr/local/heroku/bin:$PATH"
 export PATH="$HOME/.subscript/bin:$PATH"
 export PATH="$HOME/.yarn/bin:$PATH"
+export PATH="$HOME/.git-radar:$PATH"
 
 export EDITOR='vim'
 export VISUAL='vim'
@@ -44,4 +45,5 @@ export PATH=${PATH}:${ANDROID_HOME}/platform-tools
 export FZF_DEFAULT_COMMAND='ag -g ""'
 export FZF_DEFAULT_OPTS='--inline-info -d 15'
 export FZF_TMUX_HEIGHT=20
-export PATH=$PATH:$HOME/.git-radar
+
+export GPG_TTY=$(tty)

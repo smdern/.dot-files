@@ -7,6 +7,9 @@ if ! zgen saved; then
   zgen oh-my-zsh
 
   # plugins
+  zgen oh-my-zsh plugins/gpg-agent
+  zgen oh-my-zsh plugins/ssh-agent
+
   zgen load zsh-users/zsh-syntax-highlighting
   zgen load zsh-users/zsh-autosuggestions
   zgen load zsh-users/zsh-history-substring-search
