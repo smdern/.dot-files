@@ -9,14 +9,13 @@ if ! zgen saved; then
   # plugins
   zgen oh-my-zsh plugins/gpg-agent
   zgen oh-my-zsh plugins/ssh-agent
+  zgen oh-my-zsh plugins/z
 
   zgen load zsh-users/zsh-syntax-highlighting
   zgen load zsh-users/zsh-autosuggestions
   zgen load zsh-users/zsh-history-substring-search
-  # Like autojump, but with manual marks.
-  # Run `mark <name>` to mark, and C-g to jump to a mark.
-  # `dmark` to remove a mark.
-  zgen load uvaes/fzf-marks
+
+  zgen load andrewferrier/fzf-z
 
   # completions
   zgen load zsh-users/zsh-completions src
@@ -85,3 +84,4 @@ fi
 
 # Emacs shells are loaded as interactive, but not login, so asdf must be sourced here
 [ -z $ASDF_SOURCED ] && [ -f ~/.asdf/asdf.sh ] && source ~/.asdf/asdf.sh
+
