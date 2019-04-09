@@ -14,7 +14,7 @@
   m = merge --no-ff --no-commit
   f = fetch --prune
   pre = !git fetch --prune --all && git rebase
-  cleanbr = !git branch -r --no-color --merged | grep -v \"/\\(master\\|develop\\|integration\\|staging\\|production\\)$\" | grep -v `git rev-parse --abbrev-ref HEAD` | sed \"s/\\// :/\" | xargs -L1 git push && git branch --no-color --merged | grep -v \" \\(master\\|develop\\|integration\\)$\" | grep -v `git rev-parse --abbrev-ref HEAD` | xargs -L1 git branch -d
+  cleanbr = !git branch -r --no-color --merged | grep -v \"/\\(master\\|develop\\|integration\\|stable\\|staging\\|production\\)$\" | grep -v `git rev-parse --abbrev-ref HEAD` | sed \"s/\\// :/\" | xargs -L1 git push && git branch --no-color --merged | grep -v \" \\(master\\|develop\\|integration\\)$\" | grep -v `git rev-parse --abbrev-ref HEAD` | xargs -L1 git branch -d
   di = diff
   dc = diff --cached
   amend = commit --amend
@@ -79,4 +79,4 @@
 	includePullRequestsSection = false
 	includeIssuesSection = false
 [gpg]
-	program = gpg1
+  program = /usr/local/MacGPG2/bin/gpg2
