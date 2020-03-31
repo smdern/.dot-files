@@ -25,7 +25,6 @@ export HISTCONTROL=erasedups
 export HISTSIZE=10000
 # Append to the history file when exiting instead of overwriting it
 shopt -s histappend
-shopt -s globstar
 
 [[ -f "$(brew --prefix)"/etc/autojump.sh ]] && . "$(brew --prefix)"/etc/autojump.sh
 
@@ -37,3 +36,6 @@ stty stop undef
 command -v direnv >/dev/null 2>&1 && eval "$(direnv hook bash)"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+[ -f ~/.asdf/asdf.sh ] && source ~/.asdf/asdf.sh
+
+export PATH="/usr/local/opt/llvm/bin:$PATH"
