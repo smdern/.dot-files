@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 source "${HOME}/.dotfiles/zgen/zgen.zsh"
 
 #After making a change here, do a zgen update and restart zsh
@@ -16,6 +23,8 @@ if ! zgen saved; then
   zgen load zsh-users/zsh-history-substring-search
 
   zgen load andrewferrier/fzf-z
+
+  zgen load romkatv/powerlevel10k powerlevel10k
 
   # completions
   zgen load zsh-users/zsh-completions src
@@ -57,8 +66,6 @@ bindkey '^Z' fancy-ctrl-z
 compdef g='git'
 source ~/.bash/aliases
 
-source "${HOME}/.zsh/aaronjensen.zsh-theme"
-
 ZSH_HIGHLIGHT_STYLES[precommand]='none'
 ZSH_HIGHLIGHT_STYLES[path]='none'
 ZSH_HIGHLIGHT_STYLES[path_prefix]='none'
@@ -85,3 +92,5 @@ fi
 # Emacs shells are loaded as interactive, but not login, so asdf must be sourced here
 [ -z $ASDF_SOURCED ] && [ -f ~/.asdf/asdf.sh ] && source ~/.asdf/asdf.sh
 
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
