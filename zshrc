@@ -17,6 +17,7 @@ if ! zgen saved; then
   zgen oh-my-zsh plugins/gpg-agent
   zgen oh-my-zsh plugins/ssh-agent
   zgen oh-my-zsh plugins/z
+  zgen oh-my-zsh plugins/direnv
 
   zgen load zsh-users/zsh-syntax-highlighting
   zgen load zsh-users/zsh-autosuggestions
@@ -76,7 +77,7 @@ DISABLE_AUTO_TITLE="true"
 # Disable alternate screen in less
 LESS="-XR"
 
-command -v direnv >/dev/null 2>&1 && eval "$(direnv hook zsh)"
+# command -v direnv >/dev/null 2>&1 && eval "$(direnv hook zsh)"
 
 fpath=("$HOME/.zsh" $fpath)
 
